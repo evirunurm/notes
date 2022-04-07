@@ -1,0 +1,40 @@
+console.log() 		--> Logs into the consle.
+prompt() 			--> Dialogue asks a return / answer.
+alert() 			--> Dialogue.
+confirm() 			--> Dialogue can be accepted or cancelled.
+return() 			--> Returns 
+
+
+Methods :
+
+Objects :
+x.toString() --> Converts array into a string, with comma separated elements.
+
+Arrays :
+x.split("")		--> Make an array with each character of a string as a substring.
+x.splice(x,y,z)	--> Replaces an array element with [z]. Returns an array with deleted items.
+			x : index.
+			y : how many elements. 
+			If [z] ommited --> element removes without holes.
+
+x.join()		--> Join an array into a string. No parameters --> with commas.
+x.concat() --> Creates a new array by mergin existing arrays / strings, no limit of arrays / strings. Returns new array.
+x.slice(x, y) --> Slices out a piece of an array into a new one. 
+	x : starting element.
+	y : finishing element (optional, else rest of array too) (included).
+
+x.length() --> Returns the length of an array. Always one more than the highest array index.
+	[arrayName.length] = "newElement"; --> Adds a new element (newElement) to arrayName.
+	delete arrayName[0]; --> Changes the first element to undefined. Leaves holes.
+
+x.push() --> Adds a new element to an array at the end. Returs the new array length.
+x.pop() --> Removes the last element from an array. Returns poped out value.
+
+x.shift() --> Removes the first element from an array. Returns the shifted out string.
+x.unshift() --> Adds a new element to an array at the beginning. Returs the new array length.
+
+x.map()			--> Execute a function on each of the array's elemts.
+
+String :
+x.length() --> Returns the length of a string. Always one more than the highest string character index.
+

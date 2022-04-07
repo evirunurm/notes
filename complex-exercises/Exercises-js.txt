@@ -1,0 +1,205 @@
+CAPITALIZE FIRST LETTER :
+  <script>
+  function capitalize(string) {
+    let stringArray = string.split("");
+    if (string == string.toLowerCase()) {
+      let upperCased = stringArray[0].toUpperCase();
+      stringArray.splice(0, 1, upperCased);
+      let result = stringArray.join('');
+      console.log(result);
+
+    } else if (string == string.toUpperCase()) {
+      let lowerCased = stringArray.map(function(element, index) {
+          if (index == 0) {
+          return element;
+          } else if (index !== 0){
+          return element.toLowerCase();
+          }
+        });
+        let result = lowerCased.join('');
+        console.log(result);
+
+    } else {
+      let lowerCased = stringArray.map(function(element, index) {
+          if (element == element.toUpperCase() && index == 0) {
+            return element;
+        } else if (element !== element.toUpperCase() && index == 0) {
+            return element.toUpperCase();
+        } else if (element == element.toUpperCase() && index !== 0){
+            return element.toLowerCase();
+        } else {
+            return element;
+        }
+        });
+        let result = lowerCased.join('');
+        console.log(result);
+    }
+  }
+  capitalize(prompt(`What's your string?`));
+  </script>
+
+
+LAST LETTER :
+  <script>
+  function lastLetter(string) {
+    let stringArray = string.split('');
+    let lastLetterIndex = stringArray.length - 1;
+    console.log(stringArray[lastLetterIndex]);
+  }let myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+let list = document.createElement('ul');
+
+    // Add your code here
+    for (var i = 0; i < myArray.length; i++) {
+      let element = document.createElement('li')
+      list.appendChild(element)
+      element.textContent += myArray[i];
+      console.log("this")
+    }
+
+    // Don't edit the code below here!
+
+const section = document.querySelector('section');
+section.appendChild(list);
+  lastLetter(prompt('What is your string?'));
+  </script>
+
+
+
+EVEN NUMBERS (2-10) :
+	function getEvenNumbers() {
+		for (let countStart = 2; countStart <= 10; countStart++) {
+			if (!(countStart % 2)) {
+			  console.log(countStart);
+			}
+		}
+	}
+
+COUNTDOWN TO 10 :
+let output = document.querySelector('.output');
+output.innerHTML = '';
+
+for (let i = 10; i >= 0; i--) {
+  let para = document.createElement('p');
+
+  if (i == 10) {
+    para.textContent = "Countdown 10";
+  } else if (i == 0) {
+    para.textContent = "Blast off!";
+  } else {
+    para.textContent = i;
+  }
+  output.appendChild(para);
+}
+
+
+
+INVITE LIST / ADMITTED - REFUSED :
+const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+const admitted = document.querySelector('.admitted');
+const refused = document.querySelector('.refused');
+admitted.textContent = 'Admit: ';
+refused.textContent = 'Refuse: ';
+
+for (let i = 0; i < people.length; i++) {
+  if ( people[i] == "Lola" || people[i] == "Phil" ) {
+    refused.textContent += people[i] + ", ";
+  } else {
+    admitted.textContent += people[i] + ", ";
+  }
+}
+addDots();
+function addDots() {
+refused.textContent = refused.textContent.slice(0, -2) + ".";
+admitted.textContent = admitted.textContent.slice(0, -2) + ".";
+}
+
+
+
+LOOP LIST INSIDE UL :
+let myArray = ['tomatoes', 'chick peas', 'onions', 'rice', 'black beans'];
+let list = document.createElement('ul');
+    // Add your code here
+    for (var i = 0; i < myArray.length; i++) {
+      let element = document.createElement('li')
+      list.appendChild(element)
+      element.textContent += myArray[i];
+      console.log("this")
+    }
+    // Don't edit the code below here!
+const section = document.querySelector('section');
+section.appendChild(list);
+
+
+
+LIST OF NAMES TOOP AND TELL NUMBER ARRAY OF OBJECTS :
+let name = "TINA";
+let para = document.createElement('p');
+let phonebook = [
+  { name : 'Chris', number : '1549' },
+  { name : 'Li Kang', number : '9634' },
+  { name : 'Anne', number : '9065' },
+  { name : 'Francesca', number : '3001' },
+  { name : 'Mustafa', number : '6888' },
+  { name : 'Tina', number : '4312' },
+  { name : 'Bert', number : '7780' },
+  { name : 'Jada', number : '2282' },
+]
+// Add your code here
+// input : name
+// output : name + phonenumber.
+let i = 0;
+searchLoop:
+for (i = 0; i <= (phonebook.length - 1); i++) {
+  if (phonebook[i].name.toLowerCase() == name.toLowerCase()) {
+    if (phonebook[i].name.slice(-1) == "s") {
+      para.textContent = phonebook[i].name + "' number is " + phonebook[i].number;
+    } else {
+      para.textContent = phonebook[i].name + "'s number is " + phonebook[i].number;
+    }
+    break searchLoop;
+  }
+}
+if (para.textContent == "") {
+  para.textContent = "Sorry, I don know him / her."
+}
+// Don't edit the code below here!
+let section = document.querySelector('section');
+section.appendChild(para);
+
+
+
+PRIME NUMBER LOOP FROM 500 TO 2 :
+let i = 500;
+let para = document.createElement('p');
+function isPrime(num) {
+  for(let i = 2; i < num; i++) {
+    if(num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+// Add your code here
+for (i; i >= 2; i--) {
+
+  if (isPrime(i)) {
+    para.textContent += i + ", "
+    continue;
+  } else {
+    console.log(i);
+    continue;
+  }
+}
+// Don't edit the code below here!
+let section = document.querySelector('section');
+section.appendChild(para);
+
+
+
+
+
+
+
+
+
+

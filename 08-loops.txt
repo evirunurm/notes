@@ -1,0 +1,89 @@
+Loops :
+	A way to repeat the same code multiple times.
+	A loop normally has one / more of the following features :
+		Begin / Counter variable / initializer : Executes once upon entering the loop.
+			You must check that it is incremented / decrementes --> Infinite loop.
+		Condition : Checked before every loop iteration.If falsy, the loop stops.
+		Step / Iterator / Final-expression : Executes after the body of each iteration.
+		
+		Body / Loop body : Runs again and agarin while the condition is truthy.
+		Loop body : Goes inside curly braces, code that runs with each iteration.
+		Iteration : A single execution if the loop body.
+	
+	Types :
+		01. "While" loop :
+			Condition is checked before the code is executed.
+			while (condition) { block of code };
+				curly braces --> not required if single line.
+		
+		02. "Do...while" loop :
+			Code executes once before the condition is checked.
+			do { block of code } while (condition);
+		
+		03. "For" loop :
+			if condition → run body and run step
+			for (begin; condition; step) { block of code };
+			Loop parts can be skipped : for(;condition;) --> Same : while(condition).
+				Semicolons must be present --> syntax error.
+		
+	Break / continue :
+		
+		Can't go with the "?" operator --> must use "if".
+			break; -->		Force to exit the loop.
+			continue; --> 	Force to skip the iteration.
+		
+		Labels :
+			Identifier with a colon before a loop --> labelName : for (condition) { for (condition) { block of code } }
+			Allows to break / continue a block of code / loop from one specific place.
+				break labelName; --> breaks out the label --> labelName : for (condition) { for (condition) { block of code; break labelName;  } }
+			Line breaks --> Irrelevant.
+		
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+01-Exercises :
+	01. 1 						--> ok
+
+	02. 1, 2, 3, 4				--> ok
+		1, 2, 3, 4, 5
+
+	03. 1, 2, 3, 4, 5 --> no, from 0 to 4. Doesnt start at 1. Adds after alerting!!!!
+		1, 2, 3, 4, 5
+
+	04. function getEvenNumbers() {
+		  for (let countStart = 2; countStart <= 10; countStart++) {
+			if (!(countStart % 2)) {
+			  console.log(countStart);
+			}
+		  }
+		}
+
+	05. let i = 0
+		while (i < 3) {
+		  alert( `number ${i}!` );
+		  i++
+		}
+	
+	let maxNumber = prompt("Write a number!");
+
+	nextPrime:
+	for (let possiblePrimeNumber = 2; possiblePrimeNumber <= maxNumber; possiblePrimeNumber++) {
+
+		for (let divident = 2; divident < possiblePrimeNumber; divident++) {
+			if (possiblePrimeNumber % divident  == 0) continue nextPrime;
+		}
+
+		console.log(possiblePrimeNumber);

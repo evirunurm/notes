@@ -1,0 +1,172 @@
+Functions :
+	Reusable blocks of code.
+	Built-in functions / Custom Functions 
+	Invoke a function: function(). If you don't write (), it won't be executed --> other languages yes.
+		If you console.log() the function name without () --> source code.
+
+	Types :
+		Function declaration --> 	function x() { block of code; }
+			Can be called earlier than it is defined.
+				JS prepares to run script --> looks for global Function Declarations --> creates the functions.
+			Strict mode : Only visible inside the code block in which it resides.
+		
+		Function expression --> 	let x = function() { block of code; }
+			Can't be called earlier than it is defined.
+			Strict mode : Visible outside of the code block in which it resides aswell.
+			Not hoisted.
+			Can be value of multiple variables. --> NOT RECOMMENDED.
+			A function --> special value.
+				If you console.log() the variable name --> source code.
+					Other prografmming languages --> runs function.
+			Semicolon (;) at the end.
+		
+		Anonymous function --> 		function() { block of code; }
+			Normally with event handlers 
+		
+		Arrow function --> 			let x = (argument01, argument02) => return block of code; // 
+									let x = argument => argument * 2; // in case there's only one argument, no parenthesis.
+									let x = () => alert("Hello!"); // in case there's no argument, parethesis.
+									let x = () => { block of code; }; // in case there's more than one line of code.
+			Shorter version of Function Expression.
+			Uses : 
+				Convenient for simple one-line actions.
+		
+
+	Callback functions :
+		Simpler way of making functions inteact with each other.
+			
+			function func01 (x, y, z) {						General function declaration.
+				if(x) {
+					y();
+					z();
+				}
+			}
+			
+			function func02() {block of code}				Callback function 01, for x.
+			function func03() {block of code}				Callback function 02, for y.
+			function func04() {block of code}				Callback function 03, for z.
+			
+			function func01 (func02, func03, func04);		Calling the general function with 
+															callback functions passsed as parameters.
+
+	Naming :
+		Verb as prefix.
+			show, get, calc, create, check...
+		Brief
+		Accurate / Descriptive
+		One function per action. If needed, add two.
+
+	Parameters :
+		Values included inside the function parenthesis.
+		Several --> Separated by commas.
+		Value we decide to pass to the function:f
+				function randomFunction(parameter) {
+					console.log(parameter+ ' something');
+				}
+				randomFunction('It's');				--> 'It's' is an argument.
+		Default parameters : If not provided --> undefined.
+			?? can be used to compare undefined / defined --> Returns the first defined value
+				function(value) {innerFunction(value ?? 'no value given');} function(0)   --> 0
+																			function(null)--> no value given
+																			function()    --> no value given
+
+	Scope :
+		Organization of accesibility of the variables / other things.
+		Global scope : Accesible from everywhere. 
+		Variables :
+			Local variables : Declared inside a function, only visible inside.
+			Global variables : Declared outside a function, visible from any function.
+				If inner / outer has the same name, the inner shadows the outer.
+		Calling a functction inside another function :
+			Keep in mind the scope.
+				If you want a variable declarated inside a function to be used inside another function,
+				you have to pass the value into the function as a parameter :
+					function functionName() {
+						let x;
+						
+						anotherFunction();
+					}
+					function anotherFunction(x); {
+						console.log(x);
+					}
+
+	Return values :
+		Values that the function returns when it's completed.
+		return : keyword used to return a value. Function stops when reached.
+		Uses:
+			In a function, to return values when the function is called, that later are used for another thing.
+				example.method(function01(), function02(), 0);
+			To exit the function immediately.
+				function(value) { 
+					if(!(value == correct)) {
+						return;
+				 	}
+				 	function('value is correct');
+				}
+		! Never add a newline between return and value : Alaways return (x) --> same line.
+			return				= 				return;
+				(x)
+
+	Call Stack :
+		Last-In, First-Out (LIFO) data structure.
+			Contains : address at which execution will resume + local variables + parameters.
+		We add / pop off something of the stack.
+			Step into a function --> Put something on the stack.
+			Return from a function --> Pop off of the stack.
+		Stack trace : The trace that is given (normally by the browser) of the different functions that throw an error.
+		Stack overflow : When the brows throws an error 'Range error: Maximum call stack size exceeded' after looping infinitely the call stack.
+		
+
+
+
+
+01.Exercises : Functions
+	Is the same.															ok
+
+	function checkAge(age) {												more or less,
+		return (age > 18) ? true : confirm('Did parents allow you?');		i didnt include the return 
+	}																		and the parenthesis for age.
+	
+	function checkAge(age) {												no.
+		return (age > 18) || confirm('Did parents allow you?');				didnt do a thing.
+	}
+
+	function min(a, b) {													ok
+		return ( a > b ) ? b : a );
+	}
+
+	function pow(x, n) {													no. Loops!
+		return (Math.pow(x, n););
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

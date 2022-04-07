@@ -1,0 +1,57 @@
+Problem solving :
+	Writing an original program that performs a particular set of tasks and meets all stated constraints.
+	How it isn't done :	--> WASTE OF TIME
+		01. Try a solution.
+		02. If that doesn’t work, try another one.
+		03. If that doesn’t work, repeat step 2 until you luck out.
+	Steps in the problem solving process :
+		01.	Understand the problem :
+			Write down on paper.
+			Reword it in plain language until it makes sense.
+			Draw diagrams.
+			Explain it to someone.
+		
+		02.	Plan :
+			Sketch the user interface.
+			Inputs? Where from?
+			What outputs?
+			Given inputs, steps to desired outputs. --> Algorithm to solve problem.
+				Algorithm : Recipe for solving a particular problem in pseoudo code.
+		
+		03.	Pseudo code :
+			Writing out the logic for your program in natural language.
+			Pseufocode : Informal high-level description of an algorithm.
+			COMMENTS.
+
+	Divide and conquer :
+		Decomposition : Problem --> smaller / simpler problems.
+
+	When facing a problem :
+		Debug : Go step by step through the solution, trying to find WHERE is the error.
+		Reassess : Look from another perspective. Any other, more general approach?
+		Sidenote : Start anew.
+		Research : Google. Even if you already solved it --> learn from others.
+		Caveat : Look for solutions for sub-problems. You have to struggle. If you don't, you  won't learn anything.
+
+	Practice :
+		Video-games
+		Coding challenges.
+
+	Example --> FizzBuzz :
+		01. Reword /Understand :
+			Write a program that allows the user to enter a number. Print --> 1 - (user's number).
+				For numbers that divide by three, output Fizz instead.
+				For numbers that divide by five, output Buzz instead.
+				For numbers that divide by both three and five, output FizzBuzz instead.
+		02. Plan :
+			Interface? 	No.
+			Inputs? 	User, from the command line.
+			Outputs?	List of numbers from 1 to the user's number. But each number divisible by 3/5/both, outputs Fizz/Buzz/FizzBuzz.
+		03. Pseudo code :
+			user inputs number
+			loop from 1 to the number.
+				if number divisible 3, rest zero--> Fizz.
+				if number divisible 5, rest zero --> Buzz.
+				if number divisible 5 and 3, rest zero --> FizzBuzz.
+				otherwise --> number.
+

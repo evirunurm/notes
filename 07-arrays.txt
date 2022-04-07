@@ -1,0 +1,53 @@
+Arrays :
+	Special variable which can hold more than one value at a time.
+	Create an array : 
+		Array litreal : --> easiest way to create arrays. RECOMMENDED.
+			Spaces / line breaks --> Not relevant.
+			var arrayName = [item01, item02, item03];
+		Keyword new :
+			var varName = new Array(item01, item02, item03);
+	
+	Accesibility :
+		Access elements :
+			Elemets can be accesed by it's index, [0].
+			Indexes start with 0.
+		Access full array : 
+			By it's name.
+				document.getElementById("elementsName").innerHTML = ArrayName;
+	
+	Objects :
+		Arrays vs Obejcts :
+			Arrays --> numbered indexes. Spacial type of object.
+				Arrays use numbers to access it's "elements".
+					arrayName[0]
+				When element names --> numbers.
+			Objects --> named indexes.
+				Objects use names to access it's "members".
+					objectName.memberName
+				When element names --> strings (text).
+		Arrays can include objects / functions / arrays as elements.
+	
+	Associative Arrays :
+		Arrays with named indexes.
+		Not supported in JS, but do are in other languages.
+			If named indexes used --> Redefined as object. Some array methods / properties may produce errors.
+	
+	Properties / Mefthods :
+		x.length() --> Returns the length of an array. Always one more than the highest array index.
+			[arrayName.length] = "newElement"; --> Adds a new element (newElement) to arrayName.
+			delete arrayName[0]; --> Changes the first element to undefined. Leaves holes.
+		x.toString() --> Converts array into a string, with comma separated elements.
+		x.join() --> Converts array into a string, but you can choose the separator.
+		x.push() --> Adds a new element to an array at the end. Returs the new array length.
+		x.pop() --> Removes the last element from an array. Returns poped out value.
+		x.shift() --> Removes the first element from an array. Returns the shifted out string.
+		x.unshift() --> Adds a new element to an array at the beginning. Returs the new array length.
+		x.splice(x,y,z)	--> Replaces an array element with [z]. Returns an array with deleted items.
+			x : index.
+			y : how many elements. 
+			If [z] ommited --> element removes without holes.
+		x.concat() --> Creates a new array by mergin existing arrays / strings, no limit of arrays / strings. Returns new array.
+		x.slice(x, y) --> Slices out a piece of an array into a new one. 
+			x : starting element.
+			y : finishing element (optional, else rest of array too).
+		

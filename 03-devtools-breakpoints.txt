@@ -1,0 +1,57 @@
+Dev Tools :
+	Breakpoints :
+		Types :
+			Line-of-code :				Exact region of code.
+				Pause : before LOC.
+				Equivalent to (debugger;)
+				How :
+					"Sources" --> File .js --> The line --> Click on number line (turns blue).
+
+			Conditional line-of-code :	Exact region of code, if some other condition is true.
+				Pause : when a condition is true.
+				How :
+					"Source" --> File .js --> The line --> Right-click on number line --> "Add 
+					conditional breakpoint"(turns orange).
+
+			DOM :						Code that changes / removes a specific DOM node (or children).
+				Pause : when change DOM node / it's children.
+				Types :
+					-	Subtree modifications : Triggered --> child of the selected node is removed / added / changed. 
+						(Not triggered on child node attribute changes, or on any changes to the currently-selected node.)
+					-	Attributes modifications : Triggered --> attribute is added / removed / value 
+						changed on the selected node.
+					-	Node Removal : Triggered --> selected node is removed.
+				How :
+					"Elements" --> The element --> Right-click element --> "Break on" + 
+					"Subtree modifications" / "Attribute modifications" / "Node removal"
+
+			XHR :						When an XHR URL contains string pattern.
+				Pause : when the requested URL of XHR contains a specified string. On send().
+				Use :
+					Page is requesting an incorrect URL.
+				How :
+					"Sources" --> "XHR Breakpoints" --> "Add breakpoint" --> Enter the string.
+
+			Event listener :			Code that runs after an event.
+				Pause : after an event is fired.
+				How :
+					"Sources" --> "Event Listener Breakpoints" --> Check the categories.
+
+			Exception :					Line of code with a caught / uncaught exception.
+				Pause : when cought / uncaught exception is thrown.
+				How :
+					"Sources" --> "Pause on exceptions" (turns blue) --> Check "Pause On Caught Exceptions" optional.
+
+			Function :					Whenever a function is called.
+				Pause : when a specific function is called.
+				Equivalent to set line-of-code breakpoint on the first line of the function.
+				How :
+					debug(functionName)
+				ReferenceError --> If the funtion is not in scope.
+
+		Manage line-of-code breakpoints :
+			"Breakpoints" --> Disable / remove breakpoints.
+				Check the checkbox  	disable.
+				Right-click  			remove.
+				Right-click anywhere	deactivate all breackpoints.
+

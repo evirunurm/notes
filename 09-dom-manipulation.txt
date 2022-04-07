@@ -1,0 +1,143 @@
+DOM manipulation :
+	DOM : Document Object Model.
+		Tree-like representation --> contents webpage (nodes).
+		Relationships --> arrangement.
+	Targeting :
+		Selectors : target the nodes. 
+			CSS-style selectors :
+				div.class
+				.class
+				#id>.classd
+				div#id>div.class
+				
+			Relational selectors :
+				.firstElementChild
+				.lastElementChild
+				
+	Methods :
+		Manipulate webpages with JS.
+		Types :
+			Query Selectors :
+				Returns the first match.
+				querySelectorAll --> Return not an array --> Nodelist.
+					Not all array methods afect.
+					Convert to an array --> Array.from()
+				element.querySelector(selector)
+			
+			Element Creation :
+				Creates an element in memory (not DOM), so it can be manipulated before placing.
+				document.createElement(tagName[options])
+					[options] --> Optional parameters to function.
+					tagName --> Tag type ("div", "p"...).
+			
+			Append Elements :
+				parentNode.appendChild(childNode)
+					Appends "childNode" as the last child of "parentNode".
+				parentNode.insertBefore(newNode, referenceNode)
+					Inserts "newNode" into "parentNode" before "referenceNode".
+			
+			Remove Elements :
+				parentNode.removeChild(child)
+					Removes "child" from "parentNode" --> return reference to "child".
+			
+			Altering Elements :
+				Reference --> Adding / removing / altering attributes, change classes, add style info...
+				Inline styling :
+					CamelCase / bracket notation.
+					div.style.jsProperty
+					
+				Editing Attributes :
+					div.setAttribute("id", "idName");
+						Create id with avlue "idName" / get id and assign value "idName".
+					div.getAttribute("id"); 
+						returns value of the attribute, the "idName".
+					div.removeAttribute("id");
+						removes specified attribute.
+				
+				Working with classes :
+					div.classList.add("new");
+						adds class "new" to div.
+					div.classList.remove("new");
+						removes "new" class from div.
+					div.classList.toggle("new");
+						if div has the class "new"--> remove it / if it doenst't --> add it.
+				
+				Adding text content :
+					div.textContent = "text"
+					Standard.
+				
+				Adding HTML content :
+					div.innerHTML = "<span>Hey</span>";
+
+	Events :
+		Actions on the page --> listened and reacted to with JS.
+			01. Function --> attributes (HTML)		--> Not ideal. JS in HTML + Only one "onclick" property.
+				<div onclick="function"> Content </div>
+			02. On event --> DOM object in JS.		--> Better. Only one "onclick" property.
+				div.onclick = () => function
+			03. Even listener --> nodes in JS.		--> Best.
+				div.addEventListener("click", () => {function});
+		Event as a parameter :
+			Gives access to properties and functions.
+				div.addEventListener('click', function (event) {
+					console.log(event);
+				});
+			Listeners --> groups of nodes :
+				01. GeneralSelector is a node list. Acts like an array.
+					querySelectorAll("GeneralSelector")
+				02. Add an unique id to each item of the group :
+					id="01" ; id="02" ...
+				03. Iterate through each button :
+					GeneralSelector.forEach((ParameterForEachButton) => {function});
+				04. Add event listener to each one :
+					each.addEventListener('ParameterForEachButton', () => {function(ParameterForEachButton.id);});
+			Some events :
+				Click.
+				Dblclick.
+				Keypress.
+				Keydown.
+				Keyup.
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

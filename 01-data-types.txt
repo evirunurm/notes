@@ -1,0 +1,196 @@
+Data types:
+
+Value is always of a certain type. There's nine basic data types in JavaScript.
+	01 - Number
+	02 - BigInt
+	03 - String
+	04 - Boolean
+	05 - Null
+	06 - Undefined
+	07 - Objects
+	08 - Symbols
+	09 - typeof
+	
+01 - Number :
+	Primitive.
+	Integer + Floating point
+	Opperations: (* / + -)...
+	Special numeric values: 
+		Infinity / -Infinity
+			Greateer than any number
+		Nan
+			Computational error --> Incorrect / Undefined mathematical operation.
+
+02 - BigInt :
+	Primitive.
+	Number cannot represent number larger than (2^53-1) or less than -(2^53-1). 
+	Technical limitation.
+	Rarely needed.
+	"n" at the end of integer --> 1234567890123456789012345678901234567890n
+
+03 - String :
+	Primitive.
+	There are three types of quotes by which a string is surrounded.
+		Double quotes:  "..." --> Simple, basically no difference.
+		Single quotes:  '...' --> Simple, basically no difference.
+		Backticks:      `...` --> Extended functionality. Allow to embed variables and expressions into a string.
+		${...} --> Inside is evalueated and result becomes a part of the string.
+			Can include: variables, arithmetical expression, etc...
+		/n --> Line break.
+	In other languages (Java / C) there is a special "character" type for a single character. In JS no.
+	
+	Characteristics :
+		Escaping characters :
+			Separate characters text / code.
+			\ (backslash) before the character --> 'What\'s up?'
+		Concatenation :
+			Joins together strings / variables.
+			+ (plus operator) --> let one = 'Hello, ';
+					      let joined = one + 'friend'; --> string literal
+		Convertion :
+			String to number --> Number(x);
+			Number to string --> x.toString();
+		Template literals : 
+			Instead of "..." / '...' use `...`
+			It makes everything easier --> output = `I like the song "${ song }". I gave it a score of ${ score/highestScore * 100 }%.`;
+				Variables --> ${ } (placeholder). Also code --> JS code--> ${ code }.
+				No need to use /n for a line break, as it respects the line break in the code.
+
+	Methods / Properties :
+		Method --> A bit of functionality that is build into the language/specific data type.
+		JS treats primitive values as objects when executing methods and properties.
+		Strings are immutable : They cannot be change, only replaced.
+
+		- x.length; --> Returns the length of a string.
+
+		- x.indexOf(`...`); --> Returns the index of the first ocurrance of a specific text in a string.
+				Index = Position - 1;
+				If not found --> return(-1)
+				Second parameter (`...`, x) --> Starting position of the search.
+
+		- x.lastIndexOf(`...`);) --> Returns the index of the last ocurrance of a specific text in a string.
+				Searhing direction is reversed !Second parameter.
+
+		- x.search("..."); --> Returns the index of the first ocurrance of a specific text in a string.
+				No second parameter.
+
+		- x.slice(x, y); --> Extracts a part of a string an returns the extracted part as a new string.
+				Two parameters (x, y) --> x : start position, y : end position (not included).
+				Parameter --> INDEX.
+				If parameter negative --> counted from the end.
+				If ommit second parameter --> slice out the rest.
+				
+
+		- x.substring(x, y); --> Extracts a part of a string an returns the extracted part as a new string.
+				Same as slice(x, y);.
+				No negative parameters.
+
+		- x.substr(x, y); --> Extracts a part of a string an returns the extracted part as a new string.
+				Same as slice(x, y);.
+				First parameter --> not included.
+				Second parameter --> lenth of the extracted part. Included.
+
+		- x.replace(x, y); --> Replaces a specific value with another one in the string.
+				Does not change the original string, returns a new one.
+				Case sensitive. But with (/x/i, y) without quotes, can be turned into case insensitive. ---> Regular expression.
+				Replace all matches --> (/x/g, y) without quotes. --> Regular expression.
+
+		- x.toUpperCase(); --> Convert a string to upper case.
+
+		- x.toLowerCase(); --> Convert a string to lower case.
+
+		- x.concat(x, y); --> Joins two or more strings.
+				Instead of plus operator (+).
+
+		- x.trim(); --> Removes whitespace from both sides of a string.
+				Not suported on older browsers (< Internet Explorer 8).
+
+		- x.padStart(x, y); --> Adds padding at the beggining. Only with numbers?
+
+		- x.padEnd(x, y); --> Adds padding at the end. Only with numbers?
+
+		- x.charAt(x); --> Returns the character at a specified index.
+
+		- x.charCodeAt(x); --> Returns the unicode of the character at a specified index of a string.
+
+		- Property access [x] --> Treat a string as if it was an array. Access property as index.
+				Not worth it --> unpredictable.
+				Not supported on < Internet Explorer 7.
+				Makes strings look like arrays.
+				If no character is found --> [ ] returns undefined, charAt() returns an empty string.
+				It is read only. str[0] = "A" gives no error, but it does not work. (??)
+
+		- split("x"); --> Convert a string to an array.
+				Separator --> character used to separate each element.
+				Separator ommited --> whole string in index [0].
+				Separator ("") --> array of single characters.
+	
+
+		
+		
+
+04 - Boolean (Logical type):
+	Primitive.
+	Has only two variables.
+		True
+		False
+	Uses:
+		Store yes / no values.
+		Result of comparison.
+
+05 - Null :
+	Primitive.
+	Separate value which forms a type of its own.
+	Contains only the "null" value.
+	Use:
+		Represents: "nothing", "empty", "value unknown".
+	typeof null --> returns "object". Error kept for compatibility.
+
+06 - Undefined :
+	Primitive.
+	Separate value which forms a type of its own.
+	Represents: "value is not assigned" --> Value declared, but not assigned (let age;)
+	Use:
+		Reserved as a default initial value for unassigned things.
+
+07 - Objects :
+	Not primitive --> Can contain more than one value.
+	Use:
+		Store collections of  data / more complex entities.
+	
+08 - Symbols :
+	Use:
+		Create unique identifiers for objects.
+
+09 - type of :
+	Operator.
+	Returns the type of the argument.
+	Uses:
+		Process values of different types diffrerenty.
+		Quick check.
+	Supports two forms of synthax:
+		As an operator: typeof x.
+		As a fucntion: typeof(x).
+	Returns a string with the type name.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

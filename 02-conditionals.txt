@@ -1,0 +1,290 @@
+Conditionals :
+
+	01 - Comparisons :
+		Comparison operators :
+				- < / >		(greater/less than)
+				- <= / >=	(greater/less than or equals)
+				- ==		(equals)
+				- !=		(not equals)
+
+				All comparison operators return a boolean value :
+					- True --> means "yes".
+					- False --> means "no".
+
+			String comparison :
+				JS uses the "dictionary" / "lexicographical" order --> Unicode order.
+					A < Z
+					A < a
+				Strings are compared letter-by-letter.
+
+			Different types comparison :
+				JS converts  values to numbers.
+					Booleans --> True : 1 + rest.
+								 False : 0, "", null, undefined, Nan.
+
+			Strics equality :
+				=== --> Compares if two values are completely equal.
+				!== --> Strict not equal.
+				To solve == problems (f.e. no differenciation between 0 and false).
+				Checks equality without the type conversion.
+
+			Null / Undefined comparison :
+				Non-intuitive when both are compared to other values.
+				Strict Equality :
+					null === undefined;
+					false --> they are diffrenet types.
+				Non strict equality :
+					null == undefined;
+					true --> they equal each other, but not any other value.
+				Other comparisons :
+					Converted to numbers --> null : 0, undefined : NaN.
+				Strange results :
+					Null vs 0 :
+						null > 0	--> false : converts to 0.
+						null == 0	--> false : stays as null.
+						null >= 0	--> true  : converts to 0.
+					Incomparable undefined :
+						undefined > 0	--> false : converts to NaN, can't compare.
+						undefined < 0	--> false : converts to NaN, can't compare.
+						undefined == 0	--> false : stays as undefined.
+
+			To avoid problems :
+				Treat undefined / null with exceptional care.
+				Don't use >= > < <= with undefined / null, unless you know what you're doing.
+
+
+	02 - Conditional statements :
+		Conditional operator '?':
+			let z = condition ? x : y; --> If condition if truthy --> x, if not --> y.
+			Ternary --> Three operands.
+			Simpler way to assign a variable depending on a condition.
+			Low precedence. --> No need of parentheses, but advised
+			Uses :
+				Multiple '?' :
+					let x = (condition01) ? code01 : (condition02) ? code02 : (condition03) ? code03 ; !(IMG)!
+				Replacement (if) :
+					(condition) ? code01 : code02;
+					NOT RECOMMENDED.
+
+
+		Perform different actions for different decisions.
+		Conditional statements :
+			if			: if a specific confition is true --> block of code is executed.
+			else		: if the condition is false --> block of code is executed. 
+			else if		: if the first condition is false --> new condition to test.
+			switch		: many alternative blocks of code to be executed.
+
+		if :
+			if (condition) {block of code}.
+			Code runs --> if the condition is true.
+			Can pass pre-evaluated boolean values --> let x = (y == y); if (x) {code}.
+			Can be used without braces --> 	if (condition) code.
+											else code. --> NOT RECOMMENDED.
+
+		else :
+			if (condition) {block of code} else {block of code}.
+			Code runs --> if the condition is false.
+			Sometimes goes at the end of (else if) statements.
+
+		else if :
+			if (condition-01) {block of code} else if (condition-02) {block of code} else {block of code}.
+			Code runs --> if the condition is true.
+			Chain extra choises / outcomes.
+
+		switch :
+			Select one of many code blocks to be executed.
+			switch (expression) { case x: block of code; break; case y: block of code; break;}
+			- case : the choise that the expression could be.
+			- default : block of code --> if there is no match, default will be executed. Default must end with break too.
+			- break : breaks out of the switch block. It's not necessary to break the last case.
+				If you omit the break statement, the next case will be executed even with no match.
+			Cases can share the same code : {case 0: case 1: block of code break;}
+			- If multiple cases matches --> first one.
+			- If no matches --> default.
+			- If no default --> code continues.
+			Switch cases use strict comparison.
+			Uses :
+				Ranges :
+					Make condition(boolean) equal the case(boolean) --> switch (true) { case true: code; break; }
+					First match will be the output, even if next cases also apply.
+
+
+	03 - Logical operators :
+		There are four logical operators in Java Script:
+			 ||	Or
+			 &&	And
+			 !	Not
+			 ??	Nullish Coalescing
+
+		03.01 - || (OR) :
+			In classical programming --> Boolean values only. If any statement is true --> true. If not --> false.
+			In JS --> more possibilities.
+				If an operand is not a boolean, it's converted to one (1 = true, 0 = false).
+				Possible logical combination :
+					( true || true )	true
+					( false || true )	true
+					( true || false )	true
+					( false || false )	false
+				Uses :
+					Test if any condition in an IF statement is true --> if (x || y) {block of code}.
+					Find the first truthy value of a list of variables / expression.
+						If there is multiple || values :
+							Left to right.
+							Converts each to boolean. If the result is true, returns the original value of that operand.
+							If all have been evaluated and were false, returns the last operand.
+					Short-circuit evaluation.
+						Execute commands / functions only if the boolean is false, since it stops executing when a true boolean is found.
+
+		03.02 - && (AND) :
+			&& --> ampersands
+			In classical programming --> Returns true if both operands are truthy, returns false otherwise.
+			In JS --> 
+				Possible logical combination :
+					( true && true )	true
+					( false && true )	false
+					( true && false )	false
+					( false && false )	false
+				Uses :
+					Test if both condition in an IF statement are true --> if (x && y) {block of code}.
+					Find the first falsy value of a list of variables / expression.
+						If there is multiple && values :
+							Left to right.
+							Converts each to boolean. If the result is false, returns the original value of that operand.
+							If all have been evaluated and were true, returns the last operand.
+					Sustitute for IF statements --> (x) && console.log("not x");  -->  NOT RECOMMENDED
+
+		03.03 - ! (NOT) :
+			Accepts a single argument.
+				Converts the operand to boolean type.
+				Return the inverse value.
+			!! --> converts value to boolean. Can be used Boolean(x) the same way.
+
+		Precedence :
+			01. 	! (NOT)
+			02. 	&& (AND)
+			03. 	|| (OR)
+
+
+	Ternary operators :
+		( condition ) ? code : other code
+		
+
+
+
+
+
+
+
+01 - Exercises --> Comparisons :
+	true	ok
+	false	ok
+	false --> true ??, apparenty string numbers doesnt convert to numbers when comparing.
+	true	ok
+	false	ok
+	idk --> false, null only equals to undefined
+	idk --> false, stricts equality of different types.
+
+02 - Exercises --> Logical operators :
+	2										ok
+	1										ok
+	null									ok
+	2 --> 1 and undefined
+	true --> 3. 2&&3 = 3, not true.
+
+	let age = 90;							ok
+	if (age>= 14 && age<= 90) {
+	    console.log("Old enough");
+	} else {
+	    console.log("Not old enogh");
+	}
+
+	variant01								ok
+	let age = 13;
+	if (!(age>= 14 && age<= 90)) {
+	        console.log("Old enough");
+	}
+	variant02								ok
+	let age = 13;
+	if (age< 14 || age> 90) {
+ 	       console.log("Old enough");
+	}
+
+	false / no execution --> -1 is truthy.
+	false / no execution					ok
+	false / no execution --> -1&&1 = 1, null||1 = true
+
+	let login = prompt("login");			ok
+	if ( login == "Admin" ) {
+		let password = prompt("Password");
+		if (password == "TheMaster") {
+		    alert("Welcome!");
+		    } else if (password == "" || password == null){
+		            alert("Canceled");
+		    } else {
+		            alert("Wrong password");
+		    }
+	} else if (login ==  "" || login == null) {
+		alert("Canceled");
+	} else {
+		    alert("I don't know you");
+	}
+03 - Exercises --> Conditional branching :
+	Yes										ok
+
+	let answer = prompt(`What is the "official" name of JavaScript?`, '')	ok
+	if (answer == `ECMAScript`) {
+		console.log(`Right!`);
+	} else {
+		console.log(`You don't know? ECMAScript!`);
+	}
+	
+	let answer = prompt(`What is the "official" name of JavaScript?`, '')	ok
+	let message = (answer == `ECMAScript`) ? `Right!` :
+		`You don't know? ECMAScript!`;
+	console.log(message);
+
+	let yourNumber = prompt();				ok
+	let yourAnswer = (yourNumber > 0) ? 1 :
+		(yourNumber < 0) ? -1 :
+		0;
+	console.log(yourAnswer);
+
+	let result = (a + b < 4) ? `Below` :	ok
+		`Over`;
+
+	let message = (login == `Employee`) ? `Hello` :		ok
+		(login == `Director`) ? `Greetings` :
+		(login == ``) ? `No login` :
+		``;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

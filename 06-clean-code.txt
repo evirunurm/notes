@@ -1,0 +1,57 @@
+Clean code :
+	Why :
+		Working with someone else.
+		For your self from the future.
+	Rules of thumb :
+		fIndentation :
+			Consistency --> tabs / spaces.
+		Semicolons :
+			In JS --> Mostly optional.
+			Ommiting can break code, always use them. --> RECOMMENDED
+		Line length :
+			Not more than 80 characters --> RECOMMENDED
+			When breaking a like --> Indent 2 levels + Break immediately after operator / comma.
+		Naming :
+			Descriptive.
+				Variables --> Start with noun / adjective
+				Functions --> Start with verb.
+				Single characters --> Only with loops / callback functions.
+			camelCase.f
+			
+	How to mantein a code clean :
+		01. Revise the logic before coding :
+			To avoid replacements / additions.
+			Diagrams.
+			Pseudo-code.
+		02. Expose the structure of the page :
+			Representative ID + Main containers.
+			DIV containers.
+			Easier to add / remove things afterwards.
+		03. Use correct indentation :
+			Use tabs / spaces.
+		04. Write Comments :
+			Effective / efficient way of code documentation.
+				Read at the exact moment of doubt.
+		05. Avoid abusing comments :
+			Do not use comments for :
+				Explanatory notes for yourself.
+				Blaming other people.
+				Vague statements.
+				Erasing chunks of code.
+			Comments must be there for a reason.
+			Do use comments for : 
+				Authoring specifications.
+				Deatiled statements on the functionality.
+				Notifications of recent changes.
+		06. Avoid large functions :
+			Large functions tends to become confusing.
+			Break up large functions --> smaller ones.
+		07. Use naming standards :
+			Create a naming standard / follow your company's naming standard.
+		08. Avoid indisrciminate mixing of coding languages :
+			Creates confusion.
+		09. Summarize your imports :
+			If there is several JS / HTML / CSS files --> summarize into one.
+			Saves loading time --> Each file is a HTTP request.
+		Make code more understandable, with less comments. Add context with comments.
+		
