@@ -1,0 +1,75 @@
+General Structure:
+	C# program consists of one or more files.
+		-	File --> contains zero or more namespaces.
+		-	Namespace --> contains classes, structs, interfaces, enumerations, delegates or other namespaces.
+
+	Entry point:
+		Prior C# 9: Entry point = Static Main method.
+		Post C# 9: Entry point = can have top-level statements.
+
+Main method and command-line arguments:
+	Main: entry point of a C# application:
+		- Can return int, Task or Task<int>
+			Returning int or Task<int> enables to communicate status info to scripts that invoke the executable.
+				--> Env variable: ERRORLEVEL (batch), $LastExitCode (ps).
+		- Can be async
+		- Can take "string[] args" argument or not
+		- Must be static
+	There can only be one entry point. If more than one --> must compile with StartupObject compiler option (specify).
+		Post C# 9:
+			Main can be omitted. You can write C# statements as if they were inside Main at the top, after using.
+			If global code is specified, Main() will be omitted.
+	Async Main return values:
+		When declaring async return value for Main --> compiler generates the code for calling async methods in Main.
+			If you don't specify async keyword, you can write:
+				 AsyncMethodX().GetAwaiter().GetResult();
+		When entry-point returns Task / Task<int> --> compiler generates new entry point that Gets Awaiter for your Main.
+			Returning Task not returns anything, returning Task<int> returns an int. Task is like Promise.
+			Same happens for async modifier.
+	Command-Line Arguments:
+		Environment.GetCommandLineArgs --> access command-line arguments (Console / Windows Forms app).
+		Args array can't be null, so it's safe to test its length.
+
+Top-level statements:
+	Allows writing simple programs, for utilities (Azure Functions, GitHub Actions).
+	Rules:
+		- A project can only have one file with top-level statements (entry-point).
+		- Main method will be ignored, if present together with top-level statements.
+		- "using" directives must go first in the file.
+		- top-level statements are implicitly in the global namespace.
+		- "args" variable can be references from top-level statements. Is never null, but length can be 0.
+		- Await can be used for async methods.
+		- They can return int values at the end of programs execution.
+	The compiler generated a method to serve as an entry-point with top-level statements. Its signature is generated depending on the implementation of the return statement or await keyword.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

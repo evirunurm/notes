@@ -1,0 +1,8 @@
+C# allows you to build applications like:
+    - Applications to capture, analyze, process data.
+    - Dynamic web applications
+    - 2D and 3D games
+    - Financial / scientific applications
+    - Cloud-based applications
+    - Mobile applications
+
