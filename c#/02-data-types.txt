@@ -24,9 +24,11 @@ Type system:
 				But, values can be converted to other types (assigned to new variables, passed as arguments).
 					- No data loss --> Automatic type conversion
 					- Data loss --> Cast
-
-		Built-in types:
-
+		Custom types:
+			- struct, class, interface, enum and record --> constructs.
+		Common type system: (.NET)
+			- Supports inheritance.
+			-
 
 	Namespaces:
 		Uses:
