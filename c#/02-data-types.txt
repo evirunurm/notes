@@ -27,8 +27,39 @@ Type system:
 		Custom types:
 			- struct, class, interface, enum and record --> constructs.
 		Common type system: (.NET)
-			- Supports inheritance.
-			-
+			- Supports the principle of inheritance.
+			- Each type is defined as either a value type (structs, record struct) or reference type (class, record class).
+			Each type --> data structure, encapsulates a set of data / behaviors (members).
+			Types:
+				- Class (REFERENCE):
+					When an instance of a class is assigned to another value, it's assign to the same original object.
+				- Struct (VALUE):
+					When an instance of a struct is assigned to another value, it's copied.
+				- Record (REFERENCE / VALUE):
+		Value types:
+			--> Struct / Enum
+				Derive from System.ValueType (derives from System.Object).
+				Variables directly contain their values.
+				No heap allocation / garbage collection.
+				Value types --> Sealed
+					So if you cast to teat it as an Interface it implements --> BOXING, wrap the struct inside a reference type object.
+			Struct:
+				Container for small set of related variables (Coordinates...)
+			Enum:
+				Defines a set of names integral constants.
+		Reference types:
+			class / record / delegate / array / interface
+			Contains value null until assigned.
+			Fully support inheritance from anything that isn't sealed.
+		Literal values:
+			In C# literal values receive a type from the compiler.
+			To specify a value of a numeric literal, you can append a letter to the end of the number ("f" for float).
+		Generic Types:
+			Reuse the same class to hold any type of element, without converting each element to Object.
+			Generic collection classes = Strongly typed collections.
+		Implicit types, nullable types:
+			"var" keyword --> receives type at compile time, by the compiler.
+			"?" after the type --> nullable type (int?).
 
 	Namespaces:
 		Uses:
@@ -56,7 +87,7 @@ Type system:
 				- Cannot be derived from.
 
 	Records:
-		Class/struct that provides special syntax and behavior for working with data models
+		Class/struct that provides special syntax and behavior for working with data models.
 		Uses:
 			- Define a data model that depends on value equality.
 			- Define a type for which objects are immutable.
@@ -64,8 +95,19 @@ Type system:
 			Two variables of a record type are equal if the types and all property / field values match.
 		Immutability:
 			Prevents you from changing any property or field value after it's instantiated.
+		Differences with classes:
+			- Positional parameters can be used --> create a type with immutable properties.
+				public record struct DataMeasurement(DateTime TakenAt, double Measurement);
+			- Value equality with == or Object.Equals(Object).
+			- "with" expression can be used --> create a copy (Nondestructive mutation).
+				 Person person2 = person1 with { FirstName = "John" };
+			- ToString() --> formatted string: type name, names and values of public properties.
+			- Can't inherit from a class, nor class can inherit from a record.
+		Differences with structs:
+			- Compiler synthesizes the methods for equality and ToString().
+			- Compiler synthesizes a Deconstruct method for positional record structs.
 
-
+	Interfaces:
 
 
 

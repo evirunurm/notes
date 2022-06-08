@@ -5,3 +5,4 @@ Parse:
 	int.TryParse(s); --> Throws exception if not a number
 	int.TryParse(s, out number); --> Returns boolean if number or not.
 
+ReferenceEquals(person1, person2) --> Reference equality
