@@ -108,6 +108,12 @@ Type system:
 			- Compiler synthesizes a Deconstruct method for positional record structs.
 
 	Interfaces:
+		Contains definitions for a group of related functionalities that a non-abstract class/struct must implement.
+		Static methods: must have an implementation.
+		C# 8.0 --> Default implementation for members.
+			No instance data (fields, auto-implemented properties, property-like events).
+		As structs can't inherit from other structs or classes, in order to define a behavior you must use interfaces.
+		Members are public by default.
 
 
 
