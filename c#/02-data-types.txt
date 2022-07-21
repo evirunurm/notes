@@ -114,6 +114,14 @@ Type system:
 			No instance data (fields, auto-implemented properties, property-like events).
 		As structs can't inherit from other structs or classes, in order to define a behavior you must use interfaces.
 		Members are public by default.
+			- public
+			- protected
+			- internal
+			- private
+			- protected internal
+			- private protected
+
+	Generics:
 
 
 
