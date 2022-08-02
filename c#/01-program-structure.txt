@@ -1,3 +1,8 @@
+Project Structure:
+	AssemplyInfo.cs --> Do not touch if not necessary
+	App.config --> Starting configuration
+	
+
 General Structure:
 	C# program consists of one or more files.
 		-	File --> contains zero or more namespaces.
@@ -41,6 +46,9 @@ Top-level statements:
 		- Await can be used for async methods.
 		- They can return int values at the end of programs execution.
 	The compiler generated a method to serve as an entry-point with top-level statements. Its signature is generated depending on the implementation of the return statement or await keyword.
+
+
+
 
 
 
